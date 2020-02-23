@@ -1,0 +1,6 @@
+Header-ul Dequeue.h contine implementarea cozii(+un struct cu informatia retinuta) iar Stack.h contine implementarea stivei. Pentru fiecare robot se retin intr-o coada comenzile ADD, iar in 2 stive se retine istoricul comenzilor EXECUTE(folosita pt comenzile de tipul LAST_EXECUTED, HOW_MUCH_TIME), respectiv istoricul comenzilor EXECUTE si ADD in cealalta(folosita pt comanda UNDO). 
+Cand o comanda este adaugata in coada unui robot aceasta este automat adaugata si in stiva cu istoricul EXECUTE & ADD.
+Cand o comanda din coada robotului este executata, aceasta este automat adaugata in ambele stive.
+Cand se aplica comanda UNDO, daca ultima comanda din stiva EXECUTE & ADD este de tipul ADD atunci aceasta se sterge atat din stiva cat si din coada robotului. Daca ultima comanda este de tipul EXECUTE atunci aceasta se sterge din stiva EXECUTE & ADD si din stiva EXECUTE si se adauga inapoi in coada robotului. 
+Atunci cand o comanda este executata,prioritatea acesteia(care este retinuta intr-o variabila) se seteaza pe -1. Astfel se pot deosebi comenzile din stiva EXECUTE & ADD, care sunt de tipul EXECUTE(-1) si care sunt de tipul ADD(0/1).  
+La fiecare comanda primita de la tastatura exista o functie care creste cu 1 timpul petrecut de fiecare comanda in coada fiecarui robot in parte.
